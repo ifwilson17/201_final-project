@@ -8,26 +8,28 @@ def init_db(db_name="movies.db"):
     conn = sqlite3.connect(db_name)
     cur = conn.cursor()
 
-    # TMDB table 
+# TMDB table 
     cur.execute("""
         CREATE TABLE IF NOT EXISTS tmdb_movies (
-            tmdb_id INTEGER PRIMARY KEY,
-            imdb_id TEXT,
-            title TEXT,
-            budget INTEGER
+        tmdb_id INTEGER PRIMARY KEY,
+        imdb_id INTEGER,
+        title TEXT,
+        budget INTEGER
         );
     """)
+
 # OMDB table 
     cur.execute("""
-    CREATE TABLE IF NOT EXISTS omdb_movies (
+        CREATE TABLE IF NOT EXISTS omdb_movies (
         omdb_id INTEGER PRIMARY KEY AUTOINCREMENT,
-        imdb_id TEXT,
+        imdb_id INTEGER,
         title TEXT,
         genre_id INTEGER,
         imdb_rating REAL,
         FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
-    );
-""")
+        );
+    """)
+
 
 # Genre lookup table
     cur.execute("""

@@ -62,7 +62,6 @@ def get_tmdb_movies(target=150, output_file="movie.json"):
 
 def get_omdb_ratings(imdb_ids, output_file="omdb_movies.json"):
 
-
     movies = []
     base_url = "http://www.omdbapi.com/"
 

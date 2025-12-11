@@ -414,6 +414,12 @@
         "budget": 75000000
     },
     {
+        "title": "The Grinch",
+        "tmdb_id": 360920,
+        "imdb_id": 2709692,
+        "budget": 75000000
+    },
+    {
         "title": "Harry Potter and the Philosopher's Stone",
         "tmdb_id": 671,
         "imdb_id": 241527,
@@ -880,12 +886,6 @@
         "tmdb_id": 822119,
         "imdb_id": 14513804,
         "budget": 180000000
-    },
-    {
-        "title": "Despicable Me 4",
-        "tmdb_id": 519182,
-        "imdb_id": 7510222,
-        "budget": 100000000
     },
     {
         "title": "Coco",
