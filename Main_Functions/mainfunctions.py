@@ -37,12 +37,17 @@ def get_tmdb_movies(target=150, output_file="movie.json"):
                 }
             ).json()
 
+            imdb_raw = detail_data.get("imdb_id") or ""
+            imdb_digits = re.sub(r"\D", "", imdb_raw) 
+            imdb_id_int = int(imdb_digits) if imdb_digits else None
+
+
             budget = detail_data.get("budget", 0)
             if budget > 0:
                 movies.append({
                     "title": detail_data.get("title"),
                     "tmdb_id": tmdb_id,
-                    "imdb_id": detail_data.get("imdb_id"),
+                    "imdb_id": imdb_id_int,
                     "budget": budget
                 })
             if len(movies) >= target:
@@ -61,10 +66,13 @@ def get_omdb_ratings(imdb_ids, output_file="omdb_movies.json"):
     movies = []
     base_url = "http://www.omdbapi.com/"
 
-    for imdb_id in imdb_ids:
+    for imdb_int in imdb_ids:
+        
+        imdb_lookup = f"tt{imdb_int}"
+
         detail = requests.get(base_url, params = {
             "apikey": omdb_key.api_key,
-            "i": imdb_id
+            "i": imdb_lookup
         }).json()
         imdb_rating = detail.get("imdbRating")
 
@@ -74,9 +82,9 @@ def get_omdb_ratings(imdb_ids, output_file="omdb_movies.json"):
         # Store only fields we need
         movies.append({
             "title": detail.get("Title"),
-            "imdb_id": imdb_id,
+            "imdb_id": imdb_int,
             "genre": detail.get("Genre"),
-            "imdb_rating": detail.get("imdbRating")
+            "imdb_rating": imdb_rating
         })
 
     # Save to file

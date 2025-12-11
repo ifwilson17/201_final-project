@@ -1,841 +1,841 @@
 [
     {
         "title": "Zootopia 2",
-        "imdb_id": "tt26443597",
+        "imdb_id": 26443597,
         "genre": "Animation, Action, Adventure",
         "imdb_rating": "7.8"
     },
     {
         "title": "Old Henry",
-        "imdb_id": "tt12731980",
+        "imdb_id": 12731980,
         "genre": "Action, Drama, Western",
         "imdb_rating": "7.3"
     },
     {
         "title": "Tron: Ares",
-        "imdb_id": "tt6604188",
+        "imdb_id": 6604188,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "6.5"
     },
     {
         "title": "Kantara A Legend: Chapter 1",
-        "imdb_id": "tt26439764",
+        "imdb_id": 26439764,
         "genre": "Action, Thriller",
         "imdb_rating": "8.5"
     },
     {
         "title": "Chainsaw Man - The Movie: Reze Arc",
-        "imdb_id": "tt30472557",
+        "imdb_id": 30472557,
         "genre": "Animation, Action, Adventure",
         "imdb_rating": "8.5"
     },
     {
         "title": "Predator: Badlands",
-        "imdb_id": "tt31227572",
+        "imdb_id": 31227572,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "7.6"
     },
     {
         "title": "Wildcat",
-        "imdb_id": "tt36153493",
+        "imdb_id": 36153493,
         "genre": "Action, Thriller",
         "imdb_rating": "3.9"
     },
     {
         "title": "Dracula",
-        "imdb_id": "tt31434030",
+        "imdb_id": 31434030,
         "genre": "Fantasy, Horror, Romance",
         "imdb_rating": "6.2"
     },
     {
         "title": "Zootopia",
-        "imdb_id": "tt2948356",
+        "imdb_id": 2948356,
         "genre": "Animation, Action, Adventure",
         "imdb_rating": "8.0"
     },
     {
         "title": "Frankenstein",
-        "imdb_id": "tt1312221",
+        "imdb_id": 1312221,
         "genre": "Drama, Fantasy, Horror",
         "imdb_rating": "7.5"
     },
     {
         "title": "Wicked: For Good",
-        "imdb_id": "tt19847976",
+        "imdb_id": 19847976,
         "genre": "Family, Fantasy, Musical",
         "imdb_rating": "7.1"
     },
     {
         "title": "Altered",
-        "imdb_id": "tt32123395",
+        "imdb_id": 32123395,
         "genre": "Action, Sci-Fi",
         "imdb_rating": "3.6"
     },
     {
         "title": "Demon Slayer: Kimetsu no Yaiba- The Movie - Infinity Castle",
-        "imdb_id": "tt32820897",
+        "imdb_id": 32820897,
         "genre": "Animation, Action, Adventure",
         "imdb_rating": "8.5"
     },
     {
         "title": "One Battle After Another",
-        "imdb_id": "tt30144839",
+        "imdb_id": 30144839,
         "genre": "Action, Crime, Drama",
         "imdb_rating": "8.3"
     },
     {
         "title": "Bramayugam",
-        "imdb_id": "tt27431598",
+        "imdb_id": 27431598,
         "genre": "Drama, Horror, Thriller",
         "imdb_rating": "7.8"
     },
     {
         "title": "Five Nights at Freddy's",
-        "imdb_id": "tt4589218",
+        "imdb_id": 4589218,
         "genre": "Horror, Mystery, Thriller",
         "imdb_rating": "5.4"
     },
     {
         "title": "KPop Demon Hunters",
-        "imdb_id": "tt14205554",
+        "imdb_id": 14205554,
         "genre": "Animation, Action, Adventure",
         "imdb_rating": "7.6"
     },
     {
         "title": "Now You See Me: Now You Don't",
-        "imdb_id": "tt4712810",
+        "imdb_id": 4712810,
         "genre": "Crime, Thriller",
         "imdb_rating": "6.3"
     },
     {
         "title": "Bugonia",
-        "imdb_id": "tt12300742",
+        "imdb_id": 12300742,
         "genre": "Comedy, Crime, Sci-Fi",
         "imdb_rating": "7.6"
     },
     {
         "title": "Art of Eight Limbs",
-        "imdb_id": "tt10079652",
+        "imdb_id": 10079652,
         "genre": "Action, Thriller",
         "imdb_rating": "4.0"
     },
     {
-        "title": "xXx",
-        "imdb_id": "tt0295701",
-        "genre": "Action, Adventure, Drama",
-        "imdb_rating": "5.9"
+        "title": null,
+        "imdb_id": 295701,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Mission: Impossible - The Final Reckoning",
-        "imdb_id": "tt9603208",
+        "imdb_id": 9603208,
         "genre": "Action, Adventure, Thriller",
         "imdb_rating": "7.2"
     },
     {
         "title": "Die My Love",
-        "imdb_id": "tt9362736",
+        "imdb_id": 9362736,
         "genre": "Drama, Thriller",
         "imdb_rating": "6.6"
     },
     {
         "title": "Black Phone 2",
-        "imdb_id": "tt29644189",
+        "imdb_id": 29644189,
         "genre": "Horror",
         "imdb_rating": "6.2"
     },
     {
         "title": "The Fantastic Four: First Steps",
-        "imdb_id": "tt10676052",
+        "imdb_id": 10676052,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "7.0"
     },
     {
         "title": "Regretting You",
-        "imdb_id": "tt33088452",
+        "imdb_id": 33088452,
         "genre": "Drama, Romance",
         "imdb_rating": "6.2"
     },
     {
         "title": "Superman",
-        "imdb_id": "tt5950044",
+        "imdb_id": 5950044,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "7.1"
     },
     {
         "title": "Jurassic World: Rebirth",
-        "imdb_id": "tt31036941",
+        "imdb_id": 31036941,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "5.9"
     },
     {
         "title": "The Conjuring: Last Rites",
-        "imdb_id": "tt22898462",
+        "imdb_id": 22898462,
         "genre": "Horror, Mystery, Thriller",
         "imdb_rating": "6.3"
     },
     {
-        "title": "The Avengers",
-        "imdb_id": "tt0848228",
-        "genre": "Action, Sci-Fi",
-        "imdb_rating": "8.0"
+        "title": null,
+        "imdb_id": 848228,
+        "genre": null,
+        "imdb_rating": null
     },
     {
-        "title": "How the Grinch Stole Christmas",
-        "imdb_id": "tt0170016",
-        "genre": "Comedy, Family, Fantasy",
-        "imdb_rating": "6.4"
+        "title": null,
+        "imdb_id": 170016,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Wicked",
-        "imdb_id": "tt1262426",
+        "imdb_id": 1262426,
         "genre": "Fantasy, Musical, Romance",
         "imdb_rating": "7.4"
     },
     {
-        "title": "Home Alone 2: Lost in New York",
-        "imdb_id": "tt0104431",
-        "genre": "Adventure, Comedy, Crime",
-        "imdb_rating": "6.9"
+        "title": null,
+        "imdb_id": 104431,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "The Prosecutor",
-        "imdb_id": "tt30024043",
+        "imdb_id": 30024043,
         "genre": "Action, Drama, Thriller",
         "imdb_rating": "6.5"
     },
     {
-        "title": "Interstellar",
-        "imdb_id": "tt0816692",
-        "genre": "Adventure, Drama, Sci-Fi",
-        "imdb_rating": "8.7"
+        "title": null,
+        "imdb_id": 816692,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "F1: The Movie",
-        "imdb_id": "tt16311594",
+        "imdb_id": 16311594,
         "genre": "Action, Drama, Sport",
         "imdb_rating": "7.7"
     },
     {
         "title": "The Monuments Men",
-        "imdb_id": "tt2177771",
+        "imdb_id": 2177771,
         "genre": "Biography, Comedy, Drama",
         "imdb_rating": "6.1"
     },
     {
-        "title": "Avatar",
-        "imdb_id": "tt0499549",
-        "genre": "Action, Adventure, Fantasy",
-        "imdb_rating": "7.9"
+        "title": null,
+        "imdb_id": 499549,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "How to Train Your Dragon",
-        "imdb_id": "tt26743210",
+        "imdb_id": 26743210,
         "genre": "Action, Adventure, Comedy",
         "imdb_rating": "7.8"
     },
     {
         "title": "It",
-        "imdb_id": "tt1396484",
+        "imdb_id": 1396484,
         "genre": "Horror",
         "imdb_rating": "7.3"
     },
     {
         "title": "It: Chapter Two",
-        "imdb_id": "tt7349950",
+        "imdb_id": 7349950,
         "genre": "Drama, Fantasy, Horror",
         "imdb_rating": "6.5"
     },
     {
         "title": "The Bad Guys 2",
-        "imdb_id": "tt30017619",
+        "imdb_id": 30017619,
         "genre": "Animation, Action, Adventure",
         "imdb_rating": "7.0"
     },
     {
         "title": "Avatar: The Way of Water",
-        "imdb_id": "tt1630029",
+        "imdb_id": 1630029,
         "genre": "Action, Adventure, Fantasy",
         "imdb_rating": "7.5"
     },
     {
         "title": "Elio",
-        "imdb_id": "tt4900148",
+        "imdb_id": 4900148,
         "genre": "Animation, Adventure, Comedy",
         "imdb_rating": "6.7"
     },
     {
         "title": "Ballerina",
-        "imdb_id": "tt7181546",
+        "imdb_id": 7181546,
         "genre": "Action, Thriller",
         "imdb_rating": "6.9"
     },
     {
         "title": "Shelby Oaks",
-        "imdb_id": "tt14999684",
+        "imdb_id": 14999684,
         "genre": "Horror, Thriller",
         "imdb_rating": "5.8"
     },
     {
         "title": "Nobody 2",
-        "imdb_id": "tt28996126",
+        "imdb_id": 28996126,
         "genre": "Action, Comedy, Crime",
         "imdb_rating": "6.3"
     },
     {
         "title": "Inside Out 2",
-        "imdb_id": "tt22022452",
+        "imdb_id": 22022452,
         "genre": "Animation, Adventure, Comedy",
         "imdb_rating": "7.5"
     },
     {
         "title": "Moana 2",
-        "imdb_id": "tt13622970",
+        "imdb_id": 13622970,
         "genre": "Animation, Adventure, Comedy",
         "imdb_rating": "6.3"
     },
     {
-        "title": "Predator",
-        "imdb_id": "tt0093773",
-        "genre": "Action, Adventure, Horror",
-        "imdb_rating": "7.8"
+        "title": null,
+        "imdb_id": 93773,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Sentimental Value",
-        "imdb_id": "tt27714581",
+        "imdb_id": 27714581,
         "genre": "Drama",
         "imdb_rating": "7.7"
     },
     {
         "title": "A Minecraft Movie",
-        "imdb_id": "tt3566834",
+        "imdb_id": 3566834,
         "genre": "Action, Adventure, Comedy",
         "imdb_rating": "5.6"
     },
     {
         "title": "Roofman",
-        "imdb_id": "tt4627382",
+        "imdb_id": 4627382,
         "genre": "Biography, Crime, Drama",
         "imdb_rating": "7.2"
     },
     {
         "title": "Inception",
-        "imdb_id": "tt1375666",
+        "imdb_id": 1375666,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "8.8"
     },
     {
-        "title": "The Dark Knight",
-        "imdb_id": "tt0468569",
-        "genre": "Action, Crime, Drama",
-        "imdb_rating": "9.1"
+        "title": null,
+        "imdb_id": 468569,
+        "genre": null,
+        "imdb_rating": null
     },
     {
-        "title": "E.T. the Extra-Terrestrial",
-        "imdb_id": "tt0083866",
-        "genre": "Adventure, Family, Sci-Fi",
-        "imdb_rating": "7.9"
+        "title": null,
+        "imdb_id": 83866,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Lilo & Stitch",
-        "imdb_id": "tt11655566",
+        "imdb_id": 11655566,
         "genre": "Action, Adventure, Comedy",
         "imdb_rating": "6.7"
     },
     {
-        "title": "The Lord of the Rings: The Fellowship of the Ring",
-        "imdb_id": "tt0120737",
-        "genre": "Adventure, Drama, Fantasy",
-        "imdb_rating": "8.9"
+        "title": null,
+        "imdb_id": 120737,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "The Grinch",
-        "imdb_id": "tt2709692",
+        "imdb_id": 2709692,
         "genre": "Animation, Comedy, Family",
         "imdb_rating": "6.4"
     },
     {
-        "title": "Harry Potter and the Sorcerer's Stone",
-        "imdb_id": "tt0241527",
-        "genre": "Adventure, Family, Fantasy",
-        "imdb_rating": "7.7"
+        "title": null,
+        "imdb_id": 241527,
+        "genre": null,
+        "imdb_rating": null
     },
     {
-        "title": "Titanic",
-        "imdb_id": "tt0120338",
-        "genre": "Drama, Romance",
-        "imdb_rating": "7.9"
+        "title": null,
+        "imdb_id": 120338,
+        "genre": null,
+        "imdb_rating": null
     },
     {
-        "title": "Harry Potter and the Chamber of Secrets",
-        "imdb_id": "tt0295297",
-        "genre": "Adventure, Family, Fantasy",
-        "imdb_rating": "7.5"
+        "title": null,
+        "imdb_id": 295297,
+        "genre": null,
+        "imdb_rating": null
     },
     {
-        "title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
-        "imdb_id": "tt0363771",
-        "genre": "Adventure, Family, Fantasy",
-        "imdb_rating": "6.9"
+        "title": null,
+        "imdb_id": 363771,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Deadpool & Wolverine",
-        "imdb_id": "tt6263850",
+        "imdb_id": 6263850,
         "genre": "Action, Adventure, Comedy",
         "imdb_rating": "7.5"
     },
     {
         "title": "Furiosa: A Mad Max Saga",
-        "imdb_id": "tt12037194",
+        "imdb_id": 12037194,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "7.5"
     },
     {
         "title": "A Working Man",
-        "imdb_id": "tt9150192",
+        "imdb_id": 9150192,
         "genre": "Action, Thriller",
         "imdb_rating": "5.7"
     },
     {
-        "title": "The Godfather",
-        "imdb_id": "tt0068646",
-        "genre": "Crime, Drama",
-        "imdb_rating": "9.2"
+        "title": null,
+        "imdb_id": 68646,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "The Running Man",
-        "imdb_id": "tt14107334",
+        "imdb_id": 14107334,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "6.8"
     },
     {
         "title": "Ne Zha 2",
-        "imdb_id": "tt34956443",
+        "imdb_id": 34956443,
         "genre": "Animation, Action, Adventure",
         "imdb_rating": "8.0"
     },
     {
         "title": "The Long Walk",
-        "imdb_id": "tt10374610",
+        "imdb_id": 10374610,
         "genre": "Horror, Sci-Fi, Thriller",
         "imdb_rating": "6.8"
     },
     {
         "title": "Train Dreams",
-        "imdb_id": "tt29768334",
+        "imdb_id": 29768334,
         "genre": "Drama",
         "imdb_rating": "7.4"
     },
     {
-        "title": "The Lord of the Rings: The Two Towers",
-        "imdb_id": "tt0167261",
-        "genre": "Adventure, Drama, Fantasy",
-        "imdb_rating": "8.8"
+        "title": null,
+        "imdb_id": 167261,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Sinners",
-        "imdb_id": "tt31193180",
+        "imdb_id": 31193180,
         "genre": "Action, Drama, Horror",
         "imdb_rating": "7.6"
     },
     {
-        "title": "The Shawshank Redemption",
-        "imdb_id": "tt0111161",
-        "genre": "Drama",
-        "imdb_rating": "9.3"
+        "title": null,
+        "imdb_id": 111161,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Final Destination: Bloodlines",
-        "imdb_id": "tt9619824",
+        "imdb_id": 9619824,
         "genre": "Horror, Thriller",
         "imdb_rating": "6.7"
     },
     {
         "title": "Red One",
-        "imdb_id": "tt14948432",
+        "imdb_id": 14948432,
         "genre": "Action, Adventure, Comedy",
         "imdb_rating": "6.2"
     },
     {
         "title": "The Naked Gun",
-        "imdb_id": "tt3402138",
+        "imdb_id": 3402138,
         "genre": "Action, Comedy, Crime",
         "imdb_rating": "6.5"
     },
     {
         "title": "Harry Potter and the Deathly Hallows: Part 2",
-        "imdb_id": "tt1201607",
+        "imdb_id": 1201607,
         "genre": "Adventure, Family, Fantasy",
         "imdb_rating": "8.1"
     },
     {
         "title": "The Ugly Stepsister",
-        "imdb_id": "tt29344903",
+        "imdb_id": 29344903,
         "genre": "Comedy, Drama, Horror",
         "imdb_rating": "7.0"
     },
     {
-        "title": "Harry Potter and the Deathly Hallows: Part 1",
-        "imdb_id": "tt0926084",
-        "genre": "Adventure, Family, Fantasy",
-        "imdb_rating": "7.7"
+        "title": null,
+        "imdb_id": 926084,
+        "genre": null,
+        "imdb_rating": null
     },
     {
-        "title": "The Blob",
-        "imdb_id": "tt0051418",
-        "genre": "Horror, Sci-Fi",
-        "imdb_rating": "6.3"
+        "title": null,
+        "imdb_id": 51418,
+        "genre": null,
+        "imdb_rating": null
     },
     {
-        "title": "Harry Potter and the Goblet of Fire",
-        "imdb_id": "tt0330373",
-        "genre": "Adventure, Family, Fantasy",
-        "imdb_rating": "7.7"
+        "title": null,
+        "imdb_id": 330373,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Weapons",
-        "imdb_id": "tt26581740",
+        "imdb_id": 26581740,
         "genre": "Horror, Mystery",
         "imdb_rating": "7.5"
     },
     {
-        "title": "Die Hard",
-        "imdb_id": "tt0095016",
-        "genre": "Action, Thriller",
-        "imdb_rating": "8.2"
+        "title": null,
+        "imdb_id": 95016,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Sonic the Hedgehog 3",
-        "imdb_id": "tt18259086",
+        "imdb_id": 18259086,
         "genre": "Action, Adventure, Comedy",
         "imdb_rating": "6.9"
     },
     {
         "title": "Nuremberg",
-        "imdb_id": "tt29567915",
+        "imdb_id": 29567915,
         "genre": "Biography, Drama, History",
         "imdb_rating": "7.6"
     },
     {
-        "title": "Harry Potter and the Order of the Phoenix",
-        "imdb_id": "tt0373889",
-        "genre": "Action, Adventure, Family",
-        "imdb_rating": "7.5"
+        "title": null,
+        "imdb_id": 373889,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "The Super Mario Bros. Movie",
-        "imdb_id": "tt6718170",
+        "imdb_id": 6718170,
         "genre": "Animation, Adventure, Comedy",
         "imdb_rating": "7.0"
     },
     {
         "title": "Avengers: Infinity War",
-        "imdb_id": "tt4154756",
+        "imdb_id": 4154756,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "8.4"
     },
     {
         "title": "Kingdom of the Planet of the Apes",
-        "imdb_id": "tt11389872",
+        "imdb_id": 11389872,
         "genre": "Action, Adventure, Drama",
         "imdb_rating": "6.8"
     },
     {
         "title": "The Wild Robot",
-        "imdb_id": "tt29623480",
+        "imdb_id": 29623480,
         "genre": "Animation, Adventure, Family",
         "imdb_rating": "8.2"
     },
     {
-        "title": "Harry Potter and the Half-Blood Prince",
-        "imdb_id": "tt0417741",
-        "genre": "Action, Adventure, Family",
-        "imdb_rating": "7.6"
+        "title": null,
+        "imdb_id": 417741,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Stolen Girl",
-        "imdb_id": "tt4682810",
+        "imdb_id": 4682810,
         "genre": "Action, Adventure, Drama",
         "imdb_rating": "5.3"
     },
     {
         "title": "M3GAN 2.0",
-        "imdb_id": "tt26342662",
+        "imdb_id": 26342662,
         "genre": "Action, Sci-Fi, Thriller",
         "imdb_rating": "6.0"
     },
     {
-        "title": "Jaws",
-        "imdb_id": "tt0073195",
-        "genre": "Adventure, Horror, Thriller",
-        "imdb_rating": "8.1"
+        "title": null,
+        "imdb_id": 73195,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Afterburn",
-        "imdb_id": "tt1210027",
+        "imdb_id": 1210027,
         "genre": "Action, Comedy, Sci-Fi",
         "imdb_rating": "4.5"
     },
     {
-        "title": "Shrek",
-        "imdb_id": "tt0126029",
-        "genre": "Animation, Adventure, Comedy",
-        "imdb_rating": "7.9"
+        "title": null,
+        "imdb_id": 126029,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "No Other Choice",
-        "imdb_id": "tt1527793",
+        "imdb_id": 1527793,
         "genre": "Comedy, Crime, Drama",
         "imdb_rating": "7.9"
     },
     {
-        "title": "Harry Potter and the Prisoner of Azkaban",
-        "imdb_id": "tt0304141",
-        "genre": "Adventure, Family, Fantasy",
-        "imdb_rating": "7.9"
+        "title": null,
+        "imdb_id": 304141,
+        "genre": null,
+        "imdb_rating": null
     },
     {
-        "title": "Pirates of the Caribbean: At World's End",
-        "imdb_id": "tt0449088",
-        "genre": "Action, Adventure, Fantasy",
-        "imdb_rating": "7.1"
+        "title": null,
+        "imdb_id": 449088,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Spider-Man: No Way Home",
-        "imdb_id": "tt10872600",
+        "imdb_id": 10872600,
         "genre": "Action, Adventure, Fantasy",
         "imdb_rating": "8.2"
     },
     {
         "title": "Marco",
-        "imdb_id": "tt29383379",
+        "imdb_id": 29383379,
         "genre": "Action, Crime, Drama",
         "imdb_rating": "6.7"
     },
     {
-        "title": "The Matrix",
-        "imdb_id": "tt0133093",
-        "genre": "Action, Sci-Fi",
-        "imdb_rating": "8.7"
+        "title": null,
+        "imdb_id": 133093,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Thunderbolts*",
-        "imdb_id": "tt20969586",
+        "imdb_id": 20969586,
         "genre": "Action, Adventure, Crime",
         "imdb_rating": "7.1"
     },
     {
         "title": "Kraven the Hunter",
-        "imdb_id": "tt8790086",
+        "imdb_id": 8790086,
         "genre": "Action, Adventure, Thriller",
         "imdb_rating": "5.5"
     },
     {
         "title": "Barbie",
-        "imdb_id": "tt1517268",
+        "imdb_id": 1517268,
         "genre": "Adventure, Comedy, Fantasy",
         "imdb_rating": "6.8"
     },
     {
         "title": "Frozen",
-        "imdb_id": "tt2294629",
+        "imdb_id": 2294629,
         "genre": "Animation, Adventure, Comedy",
         "imdb_rating": "7.4"
     },
     {
         "title": "Giantess Battle Attack",
-        "imdb_id": "tt21031010",
+        "imdb_id": 21031010,
         "genre": "Comedy, Fantasy, Sci-Fi",
         "imdb_rating": "4.1"
     },
     {
         "title": "Top Gun: Maverick",
-        "imdb_id": "tt1745960",
+        "imdb_id": 1745960,
         "genre": "Action, Drama",
         "imdb_rating": "8.2"
     },
     {
         "title": "Parasite",
-        "imdb_id": "tt6751668",
+        "imdb_id": 6751668,
         "genre": "Drama, Thriller",
         "imdb_rating": "8.5"
     },
     {
-        "title": "The Lord of the Rings: The Return of the King",
-        "imdb_id": "tt0167260",
-        "genre": "Adventure, Drama, Fantasy",
-        "imdb_rating": "9.0"
+        "title": null,
+        "imdb_id": 167260,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Play Dirty",
-        "imdb_id": "tt18392014",
+        "imdb_id": 18392014,
         "genre": "Action, Crime, Drama",
         "imdb_rating": "5.9"
     },
     {
-        "title": "The Polar Express",
-        "imdb_id": "tt0338348",
-        "genre": "Animation, Adventure, Family",
-        "imdb_rating": "6.6"
+        "title": null,
+        "imdb_id": 338348,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "John Wick: Chapter 4",
-        "imdb_id": "tt10366206",
+        "imdb_id": 10366206,
         "genre": "Action, Crime, Thriller",
         "imdb_rating": "7.6"
     },
     {
-        "title": "Pulp Fiction",
-        "imdb_id": "tt0110912",
-        "genre": "Crime, Drama",
-        "imdb_rating": "8.8"
+        "title": null,
+        "imdb_id": 110912,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Dune: Part One",
-        "imdb_id": "tt1160419",
+        "imdb_id": 1160419,
         "genre": "Action, Adventure, Drama",
         "imdb_rating": "8.0"
     },
     {
-        "title": "How to Train Your Dragon",
-        "imdb_id": "tt0892769",
-        "genre": "Animation, Action, Adventure",
-        "imdb_rating": "8.1"
+        "title": null,
+        "imdb_id": 892769,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Venom: The Last Dance",
-        "imdb_id": "tt16366836",
+        "imdb_id": 16366836,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "6.0"
     },
     {
-        "title": "The Wolf of Wall Street",
-        "imdb_id": "tt0993846",
-        "genre": "Biography, Comedy, Crime",
-        "imdb_rating": "8.2"
+        "title": null,
+        "imdb_id": 993846,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Stitch Head",
-        "imdb_id": "tt26720001",
+        "imdb_id": 26720001,
         "genre": "Animation, Comedy, Family",
         "imdb_rating": "6.1"
     },
     {
         "title": "Karate Kid: Legends",
-        "imdb_id": "tt1674782",
+        "imdb_id": 1674782,
         "genre": "Action, Drama, Family",
         "imdb_rating": "6.3"
     },
     {
         "title": "Flow",
-        "imdb_id": "tt4772188",
+        "imdb_id": 4772188,
         "genre": "Animation, Adventure, Family",
         "imdb_rating": "7.9"
     },
     {
-        "title": "Casino Royale",
-        "imdb_id": "tt0061452",
-        "genre": "Comedy",
-        "imdb_rating": "5.0"
+        "title": null,
+        "imdb_id": 61452,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Martin",
-        "imdb_id": "tt15334030",
+        "imdb_id": 15334030,
         "genre": "Action, Drama, Thriller",
         "imdb_rating": "2.2"
     },
     {
-        "title": "Forrest Gump",
-        "imdb_id": "tt0109830",
-        "genre": "Drama, Romance",
-        "imdb_rating": "8.8"
+        "title": null,
+        "imdb_id": 109830,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Good Boy",
-        "imdb_id": "tt35521922",
+        "imdb_id": 35521922,
         "genre": "Comedy, Horror, Thriller",
         "imdb_rating": "6.7"
     },
     {
         "title": "Valiant One",
-        "imdb_id": "tt21442114",
+        "imdb_id": 21442114,
         "genre": "Thriller",
         "imdb_rating": "5.0"
     },
     {
-        "title": "Pirates of the Caribbean: Dead Man's Chest",
-        "imdb_id": "tt0383574",
-        "genre": "Action, Adventure, Fantasy",
-        "imdb_rating": "7.4"
+        "title": null,
+        "imdb_id": 383574,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Kill Bill: The Whole Bloody Affair",
-        "imdb_id": "tt6019206",
+        "imdb_id": 6019206,
         "genre": "Action, Crime, Thriller",
         "imdb_rating": "8.7"
     },
     {
-        "title": "Toy Story",
-        "imdb_id": "tt0114709",
-        "genre": "Animation, Adventure, Comedy",
-        "imdb_rating": "8.3"
+        "title": null,
+        "imdb_id": 114709,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Eternity",
-        "imdb_id": "tt24950660",
+        "imdb_id": 24950660,
         "genre": "Comedy, Drama, Fantasy",
         "imdb_rating": "7.2"
     },
     {
-        "title": "The Mummy",
-        "imdb_id": "tt0120616",
-        "genre": "Action, Adventure, Fantasy",
-        "imdb_rating": "7.1"
+        "title": null,
+        "imdb_id": 120616,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "The Gorge",
-        "imdb_id": "tt13654226",
+        "imdb_id": 13654226,
         "genre": "Action, Adventure, Horror",
         "imdb_rating": "6.7"
     },
     {
-        "title": "Serenity",
-        "imdb_id": "tt0379786",
-        "genre": "Action, Adventure, Sci-Fi",
-        "imdb_rating": "7.8"
+        "title": null,
+        "imdb_id": 379786,
+        "genre": null,
+        "imdb_rating": null
     },
     {
-        "title": "The Terminator",
-        "imdb_id": "tt0088247",
-        "genre": "Action, Adventure, Sci-Fi",
-        "imdb_rating": "8.1"
+        "title": null,
+        "imdb_id": 88247,
+        "genre": null,
+        "imdb_rating": null
     },
     {
-        "title": "Fight Club",
-        "imdb_id": "tt0137523",
-        "genre": "Crime, Drama, Thriller",
-        "imdb_rating": "8.8"
+        "title": null,
+        "imdb_id": 137523,
+        "genre": null,
+        "imdb_rating": null
     },
     {
         "title": "Captain America: Brave New World",
-        "imdb_id": "tt14513804",
+        "imdb_id": 14513804,
         "genre": "Action, Adventure, Sci-Fi",
         "imdb_rating": "5.6"
     },
     {
         "title": "Despicable Me 4",
-        "imdb_id": "tt7510222",
+        "imdb_id": 7510222,
         "genre": "Animation, Adventure, Comedy",
         "imdb_rating": "6.2"
     },
     {
         "title": "Coco",
-        "imdb_id": "tt2380307",
+        "imdb_id": 2380307,
         "genre": "Animation, Adventure, Drama",
         "imdb_rating": "8.4"
     },
     {
         "title": "Shang-Chi and the Legend of the Ten Rings",
-        "imdb_id": "tt9376612",
+        "imdb_id": 9376612,
         "genre": "Action, Adventure, Fantasy",
         "imdb_rating": "7.3"
     }

@@ -1,6 +1,7 @@
 # Create database tables
 import sqlite3
 import json
+import re
 
 # Create database tables
 def init_db(db_name="movies.db"):
