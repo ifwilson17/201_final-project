@@ -1,4 +1,5 @@
 import csv
+import csv
 import sqlite3
 import matplotlib.pyplot as plt
 import re
@@ -11,6 +12,7 @@ def calculation_1_budget_vs_rating(conn):
 
     # Join TMDB and OMDB tables together using imdb_id
     cur.execute("""
+        SELECT tmdb_movies.title, tmdb_movies.budget, omdb_movies.imdb_rating
         SELECT tmdb_movies.title, tmdb_movies.budget, omdb_movies.imdb_rating
         FROM tmdb_movies
         JOIN omdb_movies
@@ -29,6 +31,7 @@ def calculation_1_budget_vs_rating(conn):
 
     # Loop through each row from the JOIN
     for row in rows:
+        title = row[0]
         title = row[0]
         budget = row[1]
         rating_value = row[2]
@@ -97,6 +100,11 @@ def calculation_1_budget_vs_rating(conn):
         "highest_rated_movie": highest_rating_row
     }
 
+    return {
+        "highest_budget_movie": highest_budget_row, 
+        "highest_rated_movie": highest_rating_row
+    }
+
 
 # Calculate the average IMDb rating for each movie genre.
 def calculation_2_avg_rating_by_genre(conn):
@@ -147,17 +155,22 @@ def calculation_2_avg_rating_by_genre(conn):
             if genre not in genre_totals:
                 genre_totals[genre] = genre_totals.get(genre, 0) + rating
                 genre_counts[genre] = genre_counts.get(genre, 0) + 1
+                genre_totals[genre] = genre_totals.get(genre, 0) + rating
+                genre_counts[genre] = genre_counts.get(genre, 0) + 1
 
+    avg_ratings = {genre: genre_totals[genre]/genre_counts[genre] for genre in genre_totals}
     avg_ratings = {genre: genre_totals[genre]/genre_counts[genre] for genre in genre_totals}
 
     # Print average rating for each genre
     print("Average IMDb Rating by Genre:")
+    for genre, avg in avg_ratings.items():
     for genre, avg in avg_ratings.items():
         print(f"  {genre}: {avg:.2f}")
     
     # Visualization #1: bar chart for average imdb rating by genre 
 
     plt.figure(figsize=(12, 6))
+    plt.bar(avg_ratings.keys(), avg_ratings.values())
     plt.bar(avg_ratings.keys(), avg_ratings.values())
     plt.title("Average IMDb Rating by Genre")
     plt.xlabel("Genre")
@@ -169,6 +182,7 @@ def calculation_2_avg_rating_by_genre(conn):
 
     plt.figure(figsize=(10, 8))
     plt.pie(genre_counts.values(), labels=genre_counts.keys(), autopct="%1.1f%%")
+    plt.pie(genre_counts.values(), labels=genre_counts.keys(), autopct="%1.1f%%")
     plt.title("Genre Distribution in OMDb Movies")
     plt.show()
 
@@ -176,7 +190,6 @@ def calculation_2_avg_rating_by_genre(conn):
 
 def calculation_3_compare_trailer_popularity_to_budget(conn):
     print("Calculation #3: Comparing Movie Trailer Popularity to Budget")
-    print("Title, Budget, Total_Views, Total_Likes, Total_Comments")
     cur = conn.cursor()
 
     cur.execute("SELECT tmdb_id, title, budget FROM tmdb_movies")
@@ -190,8 +203,14 @@ def calculation_3_compare_trailer_popularity_to_budget(conn):
         return 
     
     cleaned_rows = []
+    if not movies or not trailers: 
+        print("No trailer data found.")
+        return 
+    
+    cleaned_rows = []
     for tmdb_id, movie_title, budget in movies: 
         movie_official = re.sub(r"[^\w\s]", "", movie_title.lower()).strip()
+        matched_trailers = [
         matched_trailers = [
             t for t in trailers
             if movie_official in re.sub(r"[^\w\s]", "", t[0].lower()).strip()
@@ -216,16 +235,39 @@ def calculation_3_compare_trailer_popularity_to_budget(conn):
     budgets = [r[1]/1_000_000 for r in cleaned_rows]
     views = [r[2] for r in cleaned_rows]
     titles = [r[0] for r in cleaned_rows]
+        if matched_trailers: 
+            total_views = sum(t[1] for t in matched_trailers)
+            total_likes = sum(t[2] for t in matched_trailers)
+            total_comments = sum(t[3] for t in matched_trailers)
+
+            cleaned_rows.append((movie_title, budget, total_views, total_likes, total_comments))
+
+    if not cleaned_rows: 
+        print("No matching trailer data found.")
+        return
+
+    top_movie = max(cleaned_rows, key=lambda r:r[2])
+    print("Movie with the most trailer views")
+    print(f" Title: {top_movie[0]}")
+    print(f" Budget: ${top_movie[1]}")
+    print(f" Total Views: {top_movie[2]}")
+
+    budgets = [r[1]/1_000_000 for r in cleaned_rows]
+    views = [r[2] for r in cleaned_rows]
+    titles = [r[0] for r in cleaned_rows]
 
     plt.figure(figsize=(12,6))
+    plt.scatter(budgets, views, color='teal')
     plt.scatter(budgets, views, color='teal')
     plt.title("Youtube Trailer Views vs. Movie Budget")
     plt.xlabel("Movie Budget (Millions USD)")
     plt.ylabel("Total Trailer Views")
 
     top_n_labels = 5
+    top_n_labels = 5
     top_indices = sorted(range(len(views)), key=lambda i: views[i], reverse=True)[:top_n_labels]
     for i in top_indices: 
+        plt.text(budgets[i], views[i], titles[i], fontsize=9)
         plt.text(budgets[i], views[i], titles[i], fontsize=9)
 
     plt.show()
@@ -250,12 +292,15 @@ def save_results_to_csv(calc1_results, calc2_results, calc3_results, filename="m
         if calc1_results:
             hb = calc1_results["highest_budget_movie"]
             hr = calc1_results["highest_rated_movie"]
+            writer.writerow(["Category, Title, Budget"])
             writer.writerow(["Highest Budget Movie", hb[0], hb[1]])
+            writer.writerow(["Category, Title, Rating"])
             writer.writerow(["Highest Rated Movie", hr[0], hr[2]])
         writer.writerow([])
 
         # Calculation 2
         writer.writerow(["Calculation 2: Average IMDb Rating by Genre"])
+        writer.writerow(["Genre, IMDb Rating"])
         if calc2_results:
             for genre, avg in calc2_results.items():
                 writer.writerow([genre, avg])
@@ -263,6 +308,7 @@ def save_results_to_csv(calc1_results, calc2_results, calc3_results, filename="m
 
         # Calculation 3
         writer.writerow(["Calculation 3: Movie Trailer Popularity vs Budget"])
+        writer.writerow(["Title, Budget, Total_Views, Total_Likes, Total_Comments"])
         if calc3_results:
             for movie in calc3_results:
                 writer.writerow([
@@ -288,3 +334,5 @@ def main():
    
 if __name__ == "__main__":
     main()
+
+

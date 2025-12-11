@@ -1,6 +1,3 @@
-import sqlite3
-import json
-
 # Create database tables
 import sqlite3
 import json
@@ -47,54 +44,92 @@ def init_db(db_name="movies.db"):
     conn.close()
 
 
-# Insert TMDB row
-def insert_tmdb_row(conn, movie):
-    imdb_id = movie.get("imdb_id")
-    title = movie.get("title", "")
-
+# Insert TMDB 
+def save_tmdb_movies_to_db(conn, movies):
     cur = conn.cursor()
-    cur.execute("""
-        INSERT OR REPLACE INTO tmdb_movies (tmdb_id, imdb_id, title, budget)
-        VALUES (?, ?, ?, ?);
-    """, (
-        movie["tmdb_id"],
-        imdb_id,
-        title,
-        movie["budget"]
-    ))
-    conn.commit()
+    count_added = 0
+    for movie in movies:
+        cur.execute("SELECT 1 FROM tmdb_movies WHERE tmdb_id = ?", (movie["tmdb_id"],))
+        if cur.fetchone():
+            continue
 
-
-
-# Insert OMDB row
-def insert_omdb_row(conn, movie):
-    imdb_id = movie.get("imdb_id")
-    title = movie.get("title", "")
-
-    cur = conn.cursor()
-    cur.execute("""
-        INSERT INTO omdb_movies (imdb_id, title, genre, imdb_rating)
-        VALUES (?, ?, ?, ?);
-    """, (
-        imdb_id,
-        title,
-        movie.get("genre"),
-        movie.get("imdb_rating")
-    ))
-    conn.commit()
-
-
-
-def save_youtube_trailers_to_db(conn, trailers): 
-    cur = conn.cursor()
-    count_added = 0 
-    for t in trailers: 
         if count_added >= 25:
-                break  
-        try: 
-            before = conn.total_changes
+            break
+
+        try:
             cur.execute("""
-                INSERT OR IGNORE INTO youtube_trailers 
+                INSERT INTO tmdb_movies (tmdb_id, imdb_id, title, budget)
+                VALUES (?, ?, ?, ?);
+            """, (
+                movie["tmdb_id"],
+                movie.get("imdb_id"),
+                movie.get("title", ""),
+                movie.get("budget")
+            ))
+            count_added += 1
+        except Exception as e:
+            print("Error saving TMDB movie:", e)
+
+    conn.commit()
+    print("TMDB: Added", count_added, "movies.")
+
+
+
+# Insert OMDB 
+def save_omdb_movies_to_db(conn, movies):
+    cur = conn.cursor()
+    count_added = 0
+    for movie in movies:
+        cur.execute("SELECT 1 FROM omdb_movies WHERE imdb_id = ?", (movie.get("imdb_id"),))
+        if cur.fetchone():
+            continue
+
+        if count_added >= 25:
+            break
+
+        # Handle bad ratings
+        rating = movie.get("imdb_rating")
+        if rating is None or rating == "" or rating == "N/A":
+            rating = None
+        else:
+            try:
+                rating = float(rating)
+            except:
+                rating = None
+
+        try:
+            cur.execute("""
+                INSERT INTO omdb_movies (imdb_id, title, genre, imdb_rating)
+                VALUES (?, ?, ?, ?);
+            """, (
+                movie.get("imdb_id"),
+                movie.get("title", ""),
+                movie.get("genre"),
+                rating
+            ))
+            count_added += 1
+        except Exception as e:
+            print("Error saving OMDB movie:", e)
+
+    conn.commit()
+    print("OMDB: Added", count_added, "movies.")
+
+
+# Insert youtube trailers 
+def save_youtube_trailers_to_db(conn, trailers):
+    cur = conn.cursor()
+    count_added = 0
+    for t in trailers:
+        cur.execute("SELECT 1 FROM youtube_trailers WHERE video_id = ?", (t["video_id"],))
+        if cur.fetchone():
+            continue
+
+        if count_added >= 25:
+            break
+
+        try:
+            cur.execute("""
+                INSERT INTO youtube_trailers 
                 (title, video_id, view_count, like_count, comment_count)
                 VALUES (?, ?, ?, ?, ?)
             """, (
@@ -104,45 +139,35 @@ def save_youtube_trailers_to_db(conn, trailers):
                 t["like_count"],
                 t["comment_count"],
             ))
-            after = conn.total_changes
-
-            if after > before: 
-                count_added += 1
-
+            count_added += 1
         except Exception as e:
-            print("Error saving YouTube trailers:", e)
+            print("Error saving YouTube trailer:", e)
 
     conn.commit()
-
     print("YouTube: Added", count_added, "trailers.")
-# MAIN function for database.py
-# Reads JSON files and inserts them
+
+
+# Main function
 def main():
     init_db()
-
     conn = sqlite3.connect("movies.db")
 
     # Load TMDB JSON
     with open("movie.json", "r") as f:
         tmdb_movies = json.load(f)
+    save_tmdb_movies_to_db(conn, tmdb_movies)
 
     # Load OMDB JSON
     with open("omdb_movies.json", "r") as f:
         omdb_movies = json.load(f)
+    save_omdb_movies_to_db(conn, omdb_movies)
 
-    # Insert TMDB data
-    for movie in tmdb_movies:
-        insert_tmdb_row(conn, movie)
-
-    # Insert OMDB data
-    for movie in omdb_movies:
-        insert_omdb_row(conn, movie)
-    
-    youtube_trailers = get_youtube_trailers()
-    save_youtube_trailers_to_db(youtube_trailers)
+    # Load YouTube JSON 
+    with open("youtube_trailers.json", "r") as f:
+        youtube_trailers = json.load(f)
+    save_youtube_trailers_to_db(conn, youtube_trailers)
 
     conn.close()
-    print("Database successfully populated.")
 
 
 if __name__ == "__main__":

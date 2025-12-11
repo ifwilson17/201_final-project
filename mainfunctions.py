@@ -100,9 +100,13 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
             "key": yt_key.api_key,
             "q": "official trailer", 
             "type": "video",
+            "type": "video",
             "part": "snippet",
             "maxResults": 50
         }
+
+        if next_page_token: 
+            params_search["pageToken"] = next_page_token
 
         if next_page_token: 
             params_search["pageToken"] = next_page_token
@@ -120,6 +124,8 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
             title = re.sub(r"[^\x20-\x7E]", "", title).strip()
             video_id = item["id"]["videoId"]
 
+            if any(x in title.lower() for x in ["season"]): 
+                continue
             if any(x in title.lower() for x in ["season"]): 
                 continue
 
@@ -141,6 +147,10 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
                 "like_count": int(s.get("likeCount", 0)),
                 "comment_count": int(s.get("commentCount", 0))
             })
+
+        next_page_token = data.get("nextPageToken")
+        if not next_page_token: 
+            break
 
         next_page_token = data.get("nextPageToken")
         if not next_page_token: 
