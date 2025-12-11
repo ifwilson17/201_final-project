@@ -16,7 +16,6 @@ def calculation_1_budget_vs_rating(conn):
         ON tmdb_movies.imdb_id = omdb_movies.imdb_id;
     """)
 
-
     rows = cur.fetchall()
 
     # If the join returned nothing, we can't calculate anything
@@ -29,7 +28,7 @@ def calculation_1_budget_vs_rating(conn):
 
     # Loop through each row from the JOIN
     for row in rows:
-        title_id = row[0]
+        title = row[0]
         budget = row[1]
         rating_value = row[2]
 
@@ -40,7 +39,7 @@ def calculation_1_budget_vs_rating(conn):
         except:
             continue
 
-        cleaned_rows.append((title_id, budget, rating))
+        cleaned_rows.append((title, budget, rating))
 
     # If every rating was invalid, we cannot continue
     if not cleaned_rows:
@@ -182,8 +181,8 @@ def calculation_2_avg_rating_by_genre(conn):
     plt.title("Genre Distribution in OMDb Movies")
     plt.show()
 
-def compare_trailer_popularity_to_budget():
-    conn = sqlite3.connect("movies.db")
+def calculation_3_compare_trailer_popularity_to_budget(conn):
+    print("Calculation #3: Comparing Movie Trailer Popularity to Budget")
     cur = conn.cursor()
 
     cur.execute("SELECT tmdb_id, title, budget FROM tmdb_movies")
@@ -192,45 +191,48 @@ def compare_trailer_popularity_to_budget():
     cur.execute("SELECT title, view_count, like_count, comment_count FROM youtube_trailers")
     trailers = cur.fetchall()
 
-    results = []
-
+    if not movies or not trailers: 
+        print("No trailer data found.")
+        return 
+    
+    cleaned_rows = []
     for tmdb_id, movie_title, budget in movies: 
         movie_official = re.sub(r"[^\w\s]", "", movie_title.lower()).strip()
-        matched = [
+        matched_trailers = [
             t for t in trailers
             if movie_official in re.sub(r"[^\w\s]", "", t[0].lower()).strip()
         ]
-        if matched: 
-            total_views = sum(t[1] for t in matched)
-            total_likes = sum(t[2] for t in matched)
-            total_comments = sum(t[3] for t in matched)
+        if matched_trailers: 
+            total_views = sum(t[1] for t in matched_trailers)
+            total_likes = sum(t[2] for t in matched_trailers)
+            total_comments = sum(t[3] for t in matched_trailers)
 
-            results.append ({
-                "movie_title": movie_title, 
-                "budget": budget,
-                "total_views": total_views,
-                "total_likes": total_likes,
-                "total_comments": total_comments,
-            })
+            cleaned_rows.append((movie_title, budget, total_views, total_likes, total_comments))
 
-    conn.close()
-    return results
+    if not cleaned_rows: 
+        print("No matching trailer data found.")
+        return
 
-def plot_trailer_vs_budget(data, top_n_labels=5): 
-    budgets = [d['budget']/1_000_000 for d in data]
-    views = [d['total_views'] for d in data]
-    titles = [d['movie_title'] for d in data]
+    top_movie = max(cleaned_rows, key=lambda r:r[2])
+    print("Movie with the most trailer views")
+    print(f" Title: {top_movie[0]}")
+    print(f" Budget: ${top_movie[1]}")
+    print(f" Total Views: {top_movie[2]}")
+
+    budgets = [r[1]/1_000_000 for r in cleaned_rows]
+    views = [r[2] for r in cleaned_rows]
+    titles = [r[0] for r in cleaned_rows]
 
     plt.figure(figsize=(12,6))
-    plt.scatter(budgets, views, color='teal', alpha=0.7, edgecolors='k')
+    plt.scatter(budgets, views, color='teal')
     plt.title("Youtube Trailer Views vs. Movie Budget")
     plt.xlabel("Movie Budget (Millions USD)")
     plt.ylabel("Total Trailer Views")
-    plt.grid(True, linestyle='--', alpha=0.5)
 
+    top_n_labels = 5
     top_indices = sorted(range(len(views)), key=lambda i: views[i], reverse=True)[:top_n_labels]
     for i in top_indices: 
-        plt.text(budgets[i], views[i], titles[i], fontsize=9, ha='right', va='bottom')
+        plt.text(budgets[i], views[i], titles[i], fontsize=9)
 
     plt.show()
 
@@ -240,9 +242,7 @@ def main():
 
     calculation_1_budget_vs_rating(conn)
     calculation_2_avg_rating_by_genre(conn)
-
-    data = compare_trailer_popularity_to_budget()
-    plot_trailer_vs_budget(data)
+    calculation_3_compare_trailer_popularity_to_budget(conn)
 
     conn.close()
 
