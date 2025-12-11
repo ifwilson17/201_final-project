@@ -16,17 +16,26 @@ def init_db(db_name="movies.db"):
             budget INTEGER
         );
     """)
-
-    # OMDB table 
+# OMDB table 
     cur.execute("""
-        CREATE TABLE IF NOT EXISTS omdb_movies (
-            omdb_id INTEGER PRIMARY KEY AUTOINCREMENT,
-            imdb_id TEXT,
-            title TEXT,
-            genre TEXT,
-            imdb_rating REAL
+    CREATE TABLE IF NOT EXISTS omdb_movies (
+        omdb_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        imdb_id TEXT,
+        title TEXT,
+        genre_id INTEGER,
+        imdb_rating REAL,
+        FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
+    );
+""")
+
+# Genre lookup table
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS genres (
+            genre_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT UNIQUE
         );
     """)
+
 
     # Youtube trailers table
     cur.execute("""
@@ -79,17 +88,20 @@ def save_tmdb_movies_to_db(conn, movies):
 def save_omdb_movies_to_db(conn, movies):
     cur = conn.cursor()
     count_added = 0
+
     for movie in movies:
-        cur.execute("SELECT 1 FROM omdb_movies WHERE imdb_id = ?", (movie.get("imdb_id"),))
+        imdb_id = movie.get("imdb_id")
+
+        # Skip duplicates
+        cur.execute("SELECT 1 FROM omdb_movies WHERE imdb_id = ?", (imdb_id,))
         if cur.fetchone():
             continue
 
         if count_added >= 25:
             break
 
-        # Handle bad ratings
         rating = movie.get("imdb_rating")
-        if rating is None or rating == "" or rating == "N/A":
+        if rating in (None, "", "N/A"):
             rating = None
         else:
             try:
@@ -97,17 +109,31 @@ def save_omdb_movies_to_db(conn, movies):
             except:
                 rating = None
 
+        genre_string = movie.get("genre")
+        if genre_string:
+            first_genre = genre_string.split(",")[0].strip()     # Use first genre only
+
+            # Check if genre already exists
+            cur.execute("SELECT genre_id FROM genres WHERE name = ?", (first_genre,))
+            row = cur.fetchone()
+
+            if row:
+                genre_id = row[0]
+            else:
+                # Insert and get new genre_id
+                cur.execute("INSERT INTO genres (name) VALUES (?)", (first_genre,))
+                genre_id = cur.lastrowid
+        else:
+            genre_id = None
+
         try:
             cur.execute("""
-                INSERT INTO omdb_movies (imdb_id, title, genre, imdb_rating)
+                INSERT INTO omdb_movies (imdb_id, title, genre_id, imdb_rating)
                 VALUES (?, ?, ?, ?);
-            """, (
-                movie.get("imdb_id"),
-                movie.get("title", ""),
-                movie.get("genre"),
-                rating
-            ))
+            """, (imdb_id, movie.get("title", ""), genre_id, rating))
+
             count_added += 1
+
         except Exception as e:
             print("Error saving OMDB movie:", e)
 

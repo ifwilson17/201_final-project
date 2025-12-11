@@ -1,11 +1,11 @@
 Calculation 1: Highest Budget and IMDb Rating
-"Category, Title, Budget"
+Category,Title,Budget
 Highest Budget Movie,Mission: Impossible - The Final Reckoning,400000000
-"Category, Title, Rating"
+Category,Title,Rating
 Highest Rated Movie,Inception,8.8
 
 Calculation 2: Average IMDb Rating by Genre
-"Genre, IMDb Rating"
+Genre,IMDb Rating
 Animation,7.8
 Action,7.8
 Adventure,7.8
@@ -26,7 +26,7 @@ Music,6.2
 History,7.0
 
 Calculation 3: Movie Trailer Popularity vs Budget
-"Title, Budget, Total_Views, Total_Likes, Total_Comments"
+Title,Budget,Total_Views,Total_Likes,Total_Comments
 Avatar,237000000,30057867,612525,34516
 Avatar: Fire and Ash,400000000,30057867,612525,34516
 It,35000000,57657404,384560,16294

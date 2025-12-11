@@ -292,15 +292,15 @@ def save_results_to_csv(calc1_results, calc2_results, calc3_results, filename="m
         if calc1_results:
             hb = calc1_results["highest_budget_movie"]
             hr = calc1_results["highest_rated_movie"]
-            writer.writerow(["Category, Title, Budget"])
+            writer.writerow(["Category", "Title", "Budget"])
             writer.writerow(["Highest Budget Movie", hb[0], hb[1]])
-            writer.writerow(["Category, Title, Rating"])
+            writer.writerow(["Category", "Title", "Rating"])
             writer.writerow(["Highest Rated Movie", hr[0], hr[2]])
         writer.writerow([])
 
         # Calculation 2
         writer.writerow(["Calculation 2: Average IMDb Rating by Genre"])
-        writer.writerow(["Genre, IMDb Rating"])
+        writer.writerow(["Genre", "IMDb Rating"])
         if calc2_results:
             for genre, avg in calc2_results.items():
                 writer.writerow([genre, avg])
@@ -308,7 +308,7 @@ def save_results_to_csv(calc1_results, calc2_results, calc3_results, filename="m
 
         # Calculation 3
         writer.writerow(["Calculation 3: Movie Trailer Popularity vs Budget"])
-        writer.writerow(["Title, Budget, Total_Views, Total_Likes, Total_Comments"])
+        writer.writerow(["Title", "Budget", "Total_Views", "Total_Likes", "Total_Comments"])
         if calc3_results:
             for movie in calc3_results:
                 writer.writerow([
