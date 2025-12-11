@@ -14,7 +14,7 @@ from API_keys import omdb_key
 from API_keys import yt_key
 
 
-def get_tmdb_movies(target=100, output_file="movie.json"):
+def get_tmdb_movies(target=150, output_file="movie.json"):
     movies = []
     page = 1
     while len(movies) < target:
@@ -53,8 +53,6 @@ def get_tmdb_movies(target=100, output_file="movie.json"):
         json.dump(movies, f, indent=4)
 
     return movies
-
-
 
 
 def get_omdb_ratings(imdb_ids, output_file="omdb_movies.json"):
@@ -176,7 +174,7 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
 
 def main():
     # 1. Fetch TMDB movies
-    tmdb_movies = get_tmdb_movies(target=100)
+    tmdb_movies = get_tmdb_movies(target=150)
     print("TMDB movies collected:", len(tmdb_movies))
 
     # 2. Extract IMDb IDs from TMDB movies

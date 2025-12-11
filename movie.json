@@ -598,5 +598,305 @@
         "tmdb_id": 653346,
         "imdb_id": "tt11389872",
         "budget": 160000000
+    },
+    {
+        "title": "The Wild Robot",
+        "tmdb_id": 1184918,
+        "imdb_id": "tt29623480",
+        "budget": 78000000
+    },
+    {
+        "title": "Harry Potter and the Half-Blood Prince",
+        "tmdb_id": 767,
+        "imdb_id": "tt0417741",
+        "budget": 250000000
+    },
+    {
+        "title": "Stolen Girl",
+        "tmdb_id": 1280450,
+        "imdb_id": "tt4682810",
+        "budget": 26000000
+    },
+    {
+        "title": "M3GAN 2.0",
+        "tmdb_id": 1071585,
+        "imdb_id": "tt26342662",
+        "budget": 15000000
+    },
+    {
+        "title": "Jaws",
+        "tmdb_id": 578,
+        "imdb_id": "tt0073195",
+        "budget": 7000000
+    },
+    {
+        "title": "Afterburn",
+        "tmdb_id": 507244,
+        "imdb_id": "tt1210027",
+        "budget": 60000000
+    },
+    {
+        "title": "Shrek",
+        "tmdb_id": 808,
+        "imdb_id": "tt0126029",
+        "budget": 60000000
+    },
+    {
+        "title": "No Other Choice",
+        "tmdb_id": 639988,
+        "imdb_id": "tt1527793",
+        "budget": 12200000
+    },
+    {
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "tmdb_id": 673,
+        "imdb_id": "tt0304141",
+        "budget": 130000000
+    },
+    {
+        "title": "Pirates of the Caribbean: At World's End",
+        "tmdb_id": 285,
+        "imdb_id": "tt0449088",
+        "budget": 300000000
+    },
+    {
+        "title": "Spider-Man: No Way Home",
+        "tmdb_id": 634649,
+        "imdb_id": "tt10872600",
+        "budget": 200000000
+    },
+    {
+        "title": "Marco",
+        "tmdb_id": 1186350,
+        "imdb_id": "tt29383379",
+        "budget": 3467000
+    },
+    {
+        "title": "The Matrix",
+        "tmdb_id": 603,
+        "imdb_id": "tt0133093",
+        "budget": 63000000
+    },
+    {
+        "title": "Thunderbolts*",
+        "tmdb_id": 986056,
+        "imdb_id": "tt20969586",
+        "budget": 180000000
+    },
+    {
+        "title": "Kraven the Hunter",
+        "tmdb_id": 539972,
+        "imdb_id": "tt8790086",
+        "budget": 130000000
+    },
+    {
+        "title": "Barbie",
+        "tmdb_id": 346698,
+        "imdb_id": "tt1517268",
+        "budget": 145000000
+    },
+    {
+        "title": "Frozen",
+        "tmdb_id": 109445,
+        "imdb_id": "tt2294629",
+        "budget": 150000000
+    },
+    {
+        "title": "Giantess Battle Attack!",
+        "tmdb_id": 1026202,
+        "imdb_id": "tt21031010",
+        "budget": 100000
+    },
+    {
+        "title": "Top Gun: Maverick",
+        "tmdb_id": 361743,
+        "imdb_id": "tt1745960",
+        "budget": 170000000
+    },
+    {
+        "title": "Parasite",
+        "tmdb_id": 496243,
+        "imdb_id": "tt6751668",
+        "budget": 11363000
+    },
+    {
+        "title": "The Lord of the Rings: The Return of the King",
+        "tmdb_id": 122,
+        "imdb_id": "tt0167260",
+        "budget": 94000000
+    },
+    {
+        "title": "Play Dirty",
+        "tmdb_id": 941109,
+        "imdb_id": "tt18392014",
+        "budget": 2500000
+    },
+    {
+        "title": "The Polar Express",
+        "tmdb_id": 5255,
+        "imdb_id": "tt0338348",
+        "budget": 165000000
+    },
+    {
+        "title": "John Wick: Chapter 4",
+        "tmdb_id": 603692,
+        "imdb_id": "tt10366206",
+        "budget": 100000000
+    },
+    {
+        "title": "Pulp Fiction",
+        "tmdb_id": 680,
+        "imdb_id": "tt0110912",
+        "budget": 8000000
+    },
+    {
+        "title": "Dune",
+        "tmdb_id": 438631,
+        "imdb_id": "tt1160419",
+        "budget": 165000000
+    },
+    {
+        "title": "How to Train Your Dragon",
+        "tmdb_id": 10191,
+        "imdb_id": "tt0892769",
+        "budget": 165000000
+    },
+    {
+        "title": "Venom: The Last Dance",
+        "tmdb_id": 912649,
+        "imdb_id": "tt16366836",
+        "budget": 120000000
+    },
+    {
+        "title": "The Wolf of Wall Street",
+        "tmdb_id": 106646,
+        "imdb_id": "tt0993846",
+        "budget": 100000000
+    },
+    {
+        "title": "Stitch Head",
+        "tmdb_id": 1214130,
+        "imdb_id": "tt26720001",
+        "budget": 34800000
+    },
+    {
+        "title": "Karate Kid: Legends",
+        "tmdb_id": 1011477,
+        "imdb_id": "tt1674782",
+        "budget": 45000000
+    },
+    {
+        "title": "Flow",
+        "tmdb_id": 823219,
+        "imdb_id": "tt4772188",
+        "budget": 3700000
+    },
+    {
+        "title": "Casino Royale",
+        "tmdb_id": 12208,
+        "imdb_id": "tt0061452",
+        "budget": 12000000
+    },
+    {
+        "title": "Martin",
+        "tmdb_id": 861451,
+        "imdb_id": "tt15334030",
+        "budget": 17647000
+    },
+    {
+        "title": "Forrest Gump",
+        "tmdb_id": 13,
+        "imdb_id": "tt0109830",
+        "budget": 55000000
+    },
+    {
+        "title": "Good Boy",
+        "tmdb_id": 1422096,
+        "imdb_id": "tt35521922",
+        "budget": 70000
+    },
+    {
+        "title": "Valiant One",
+        "tmdb_id": 1009640,
+        "imdb_id": "tt21442114",
+        "budget": 10000000
+    },
+    {
+        "title": "Pirates of the Caribbean: Dead Man's Chest",
+        "tmdb_id": 58,
+        "imdb_id": "tt0383574",
+        "budget": 200000000
+    },
+    {
+        "title": "Kill Bill: The Whole Bloody Affair",
+        "tmdb_id": 414419,
+        "imdb_id": "tt6019206",
+        "budget": 55000000
+    },
+    {
+        "title": "Toy Story",
+        "tmdb_id": 862,
+        "imdb_id": "tt0114709",
+        "budget": 30000000
+    },
+    {
+        "title": "Eternity",
+        "tmdb_id": 1259102,
+        "imdb_id": "tt24950660",
+        "budget": 15000000
+    },
+    {
+        "title": "The Mummy",
+        "tmdb_id": 564,
+        "imdb_id": "tt0120616",
+        "budget": 80000000
+    },
+    {
+        "title": "The Gorge",
+        "tmdb_id": 950396,
+        "imdb_id": "tt13654226",
+        "budget": 70000000
+    },
+    {
+        "title": "Serenity",
+        "tmdb_id": 16320,
+        "imdb_id": "tt0379786",
+        "budget": 39000000
+    },
+    {
+        "title": "The Terminator",
+        "tmdb_id": 218,
+        "imdb_id": "tt0088247",
+        "budget": 6400000
+    },
+    {
+        "title": "Fight Club",
+        "tmdb_id": 550,
+        "imdb_id": "tt0137523",
+        "budget": 63000000
+    },
+    {
+        "title": "Captain America: Brave New World",
+        "tmdb_id": 822119,
+        "imdb_id": "tt14513804",
+        "budget": 180000000
+    },
+    {
+        "title": "Despicable Me 4",
+        "tmdb_id": 519182,
+        "imdb_id": "tt7510222",
+        "budget": 100000000
+    },
+    {
+        "title": "Coco",
+        "tmdb_id": 354912,
+        "imdb_id": "tt2380307",
+        "budget": 175000000
+    },
+    {
+        "title": "Shang-Chi and the Legend of the Ten Rings",
+        "tmdb_id": 566525,
+        "imdb_id": "tt9376612",
+        "budget": 150000000
     }
 ]
