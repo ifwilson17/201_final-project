@@ -10,11 +10,12 @@ def calculation_1_budget_vs_rating(conn):
 
     # Join TMDB and OMDB tables together using imdb_id
     cur.execute("""
-        SELECT tmdb_movies.title_id, tmdb_movies.budget, omdb_movies.imdb_rating
+        SELECT tmdb_movies.title, tmdb_movies.budget, omdb_movies.imdb_rating
         FROM tmdb_movies
         JOIN omdb_movies
         ON tmdb_movies.imdb_id = omdb_movies.imdb_id;
     """)
+
 
     rows = cur.fetchall()
 
