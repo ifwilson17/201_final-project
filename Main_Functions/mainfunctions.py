@@ -94,30 +94,31 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
     search_url = "https://www.googleapis.com/youtube/v3/search"
     video_url = "https://www.googleapis.com/youtube/v3/videos"
 
-    for i in range(45): 
+    next_page_token = None  # <-- add this
+
+    for i in range(6):
         params_search = {
             "key": yt_key.api_key,
-            "q": "official trailer", 
+            "q": "official trailer",
             "part": "snippet",
             "type": "video",
             "maxResults": 50
         }
+        if next_page_token:
+            params_search["pageToken"] = next_page_token
 
         response = requests.get(search_url, params=params_search)
         data = response.json()
         items = data.get("items", [])
 
-        if not items: 
-            break 
+        if not items:
+            break
 
-        for item in items: 
+        for item in items:
             title = item["snippet"]["title"]
             title = re.sub(r"&#39;", "'", title)
             title = re.sub(r"[^\x20-\x7E]", "", title).strip()
             video_id = item["id"]["videoId"]
-
-            # if any(x in title.lower() for x in ["season"]): 
-            #     continue
 
             stats_response = requests.get(video_url, params={
                 "key": yt_key.api_key,
@@ -126,36 +127,42 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
             }).json()
 
             items_stats = stats_response.get("items", [])
-            if not items_stats: 
+            if not items_stats:
                 continue
             s = items_stats[0].get("statistics", {})
-                               
+
             trailers.append({
                 "title": title,
                 "video_id": video_id,
-                "view_count": int(s.get("viewCount", 0)), 
+                "view_count": int(s.get("viewCount", 0)),
                 "like_count": int(s.get("likeCount", 0)),
                 "comment_count": int(s.get("commentCount", 0))
             })
 
+        # Get next page token for next iteration
+        next_page_token = data.get("nextPageToken")
+        if not next_page_token:
+            break  # no more pages
+
     seen_vid = []
     unique_trailers = []
 
-    for t in trailers: 
+    for t in trailers:
         title = t["title"].lower()
         base = re.split(r"\|", title)[0]
         base = re.split(r"official", base)[0]
         base = "".join(re.split(r"\(.*?\)", base))
         words = re.findall(r"[a-z0-9]+", base)
         cleaned_title = " ".join(words)
-        if cleaned_title not in seen_vid: 
+        if cleaned_title not in seen_vid:
             seen_vid.append(cleaned_title)
             unique_trailers.append(t)
 
-    with open(output_file, "w", encoding="utf-8") as f: 
+    with open(output_file, "w", encoding="utf-8") as f:
         json.dump(unique_trailers, f, indent=4)
 
     return unique_trailers
+
 
 
 def main():

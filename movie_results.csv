@@ -1,0 +1,40 @@
+Calculation 1: Highest Budget and IMDb Rating
+"Category, Title, Budget"
+Highest Budget Movie,Mission: Impossible - The Final Reckoning,400000000
+"Category, Title, Rating"
+Highest Rated Movie,Inception,8.8
+
+Calculation 2: Average IMDb Rating by Genre
+"Genre, IMDb Rating"
+Animation,7.8
+Action,7.8
+Adventure,7.8
+Sci-Fi,6.5
+Drama,5.6
+Thriller,8.5
+Fantasy,6.2
+Horror,6.2
+Romance,6.2
+Crime,7.5
+Family,7.1
+Musical,7.1
+Comedy,5.6
+Mystery,5.4
+Sport,7.7
+Short,5.5
+Music,6.2
+Biography,5.3
+History,7.0
+
+Calculation 3: Movie Trailer Popularity vs Budget
+"Title, Budget, Total_Views, Total_Likes, Total_Comments"
+Avatar,237000000,30643104,649877,38476
+Avatar: Fire and Ash,400000000,29888068,611331,34474
+It,35000000,38262928,355296,31438
+Five Nights at Freddy's,20000000,15466884,569641,33976
+TRON: Ares,220000000,13620881,185000,14901
+Bugonia,50000000,14870382,55042,3341
+The Conjuring: Last Rites,55000000,25511357,225928,6709
+Five Nights at Freddy's 2,51000000,15466884,569641,33976
+Playdate,0,22072442,76037,3509
+Altered,15000000,24054,241,17
