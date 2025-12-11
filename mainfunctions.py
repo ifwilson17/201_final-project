@@ -102,11 +102,10 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
             "type": "video",
             "type": "video",
             "part": "snippet",
-            "maxResults": 50
+            "maxResults": 50, 
+            "regionCode": "US",
+            "relevanceLanguage": "en"
         }
-
-        if next_page_token: 
-            params_search["pageToken"] = next_page_token
 
         if next_page_token: 
             params_search["pageToken"] = next_page_token
@@ -120,13 +119,12 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
 
         for item in items: 
             title = item["snippet"]["title"]
+            title = re.sub(r"&amp;", "&", title)
             title = re.sub(r"&#39;", "'", title)
             title = re.sub(r"[^\x20-\x7E]", "", title).strip()
             video_id = item["id"]["videoId"]
 
-            if any(x in title.lower() for x in ["season"]): 
-                continue
-            if any(x in title.lower() for x in ["season"]): 
+            if any(x in title.lower() for x in ["season", "episode:"]): 
                 continue
 
             stats_response = requests.get(video_url, params={
