@@ -1,5 +1,5 @@
 # SI 201 Final Project
-# Your names: Isa, Amani, Rahma
+# Your names: Isa Wilson, Amani, Rahma
 # Your emails: ifwilson@umich.edu, aaggour@umich.edu, rmusse@umich.edu
 # Who or what you worked with on this homework (including generative AI like ChatGPT): ChatGPT
 # If you worked with generative AI also add a statement for how you used it. We used ChatGPT for assistance debugging the code.
