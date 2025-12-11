@@ -1,0 +1,27 @@
+Calculation 1: Highest Budget and IMDb Rating
+Highest Budget Movie,Mission: Impossible - The Final Reckoning,400000000
+Highest Rated Movie,The Dark Knight,9.1
+
+Calculation 2: Average IMDb Rating by Genre
+Animation,7.8
+Action,7.8
+Adventure,7.8
+Sci-Fi,6.5
+Drama,5.6
+Thriller,8.5
+Fantasy,6.2
+Horror,6.2
+Romance,6.2
+Crime,7.5
+Family,7.1
+Musical,7.1
+Comedy,5.6
+Mystery,5.4
+Sport,7.7
+Short,5.5
+Music,6.2
+Biography,5.3
+History,7.0
+Adult,3.4
+
+Calculation 3: Movie Trailer Popularity vs Budget
