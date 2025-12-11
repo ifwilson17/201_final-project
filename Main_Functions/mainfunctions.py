@@ -93,7 +93,7 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
 
     next_page_token = None
 
-    for i in range(): 
+    for i in range(6): 
         params_search = {
             "key": yt_key.api_key,
             "q": "official trailer", 
