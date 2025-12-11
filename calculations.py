@@ -1,3 +1,4 @@
+import csv
 import sqlite3
 import matplotlib.pyplot as plt
 import re
@@ -10,7 +11,7 @@ def calculation_1_budget_vs_rating(conn):
 
     # Join TMDB and OMDB tables together using imdb_id
     cur.execute("""
-        SELECT tmdb_movies.title_id, tmdb_movies.budget, omdb_movies.imdb_rating
+        SELECT tmdb_movies.title, tmdb_movies.budget, omdb_movies.imdb_rating
         FROM tmdb_movies
         JOIN omdb_movies
         ON tmdb_movies.imdb_id = omdb_movies.imdb_id;
@@ -28,7 +29,7 @@ def calculation_1_budget_vs_rating(conn):
 
     # Loop through each row from the JOIN
     for row in rows:
-        title_id = row[0]
+        title = row[0]
         budget = row[1]
         rating_value = row[2]
 
@@ -39,7 +40,7 @@ def calculation_1_budget_vs_rating(conn):
         except:
             continue
 
-        cleaned_rows.append((title_id, budget, rating))
+        cleaned_rows.append((title, budget, rating))
 
     # If every rating was invalid, we cannot continue
     if not cleaned_rows:
@@ -91,6 +92,11 @@ def calculation_1_budget_vs_rating(conn):
     plt.title("Budget Distribution of Movies")
     plt.show()
 
+    return {
+        "highest_budget_movie": highest_budget_row, 
+        "highest_rated_movie": highest_rating_row
+    }
+
 
 # Calculate the average IMDb rating for each movie genre.
 def calculation_2_avg_rating_by_genre(conn):
@@ -139,29 +145,20 @@ def calculation_2_avg_rating_by_genre(conn):
         # Add rating to each genre individually
         for genre in genres:
             if genre not in genre_totals:
-                genre_totals[genre] = 0.0
-                genre_counts[genre] = 0
+                genre_totals[genre] = genre_totals.get(genre, 0) + rating
+                genre_counts[genre] = genre_counts.get(genre, 0) + 1
 
-            genre_totals[genre] += rating
-            genre_counts[genre] += 1
+    avg_ratings = {genre: genre_totals[genre]/genre_counts[genre] for genre in genre_totals}
 
     # Print average rating for each genre
     print("Average IMDb Rating by Genre:")
-    for genre in genre_totals:
-        avg = genre_totals[genre] / genre_counts[genre]
+    for genre, avg in avg_ratings.items():
         print(f"  {genre}: {avg:.2f}")
     
     # Visualization #1: bar chart for average imdb rating by genre 
-    genres_list = []
-    averages_list = []
-
-    for genre in genre_totals:
-        avg = genre_totals[genre] / genre_counts[genre]
-        genres_list.append(genre)
-        averages_list.append(avg)
 
     plt.figure(figsize=(12, 6))
-    plt.bar(genres_list, averages_list)
+    plt.bar(avg_ratings.keys(), avg_ratings.values())
     plt.title("Average IMDb Rating by Genre")
     plt.xlabel("Genre")
     plt.ylabel("Average Rating")
@@ -169,20 +166,17 @@ def calculation_2_avg_rating_by_genre(conn):
     plt.show()
 
     # Visualization #2: pie chart of genre counts, how many movies per genre
-    genre_names = []
-    genre_sizes = []
-
-    for genre in genre_counts:
-        genre_names.append(genre)
-        genre_sizes.append(genre_counts[genre])
 
     plt.figure(figsize=(10, 8))
-    plt.pie(genre_sizes, labels=genre_names, autopct="%1.1f%%")
+    plt.pie(genre_counts.values(), labels=genre_counts.keys(), autopct="%1.1f%%")
     plt.title("Genre Distribution in OMDb Movies")
     plt.show()
 
-def compare_trailer_popularity_to_budget():
-    conn = sqlite3.connect("movies.db")
+    return avg_ratings
+
+def calculation_3_compare_trailer_popularity_to_budget(conn):
+    print("Calculation #3: Comparing Movie Trailer Popularity to Budget")
+    print("Title, Budget, Total_Views, Total_Likes, Total_Comments")
     cur = conn.cursor()
 
     cur.execute("SELECT tmdb_id, title, budget FROM tmdb_movies")
@@ -191,60 +185,106 @@ def compare_trailer_popularity_to_budget():
     cur.execute("SELECT title, view_count, like_count, comment_count FROM youtube_trailers")
     trailers = cur.fetchall()
 
-    results = []
-
+    if not movies or not trailers: 
+        print("No trailer data found.")
+        return 
+    
+    cleaned_rows = []
     for tmdb_id, movie_title, budget in movies: 
         movie_official = re.sub(r"[^\w\s]", "", movie_title.lower()).strip()
-        matched = [
+        matched_trailers = [
             t for t in trailers
             if movie_official in re.sub(r"[^\w\s]", "", t[0].lower()).strip()
         ]
-        if matched: 
-            total_views = sum(t[1] for t in matched)
-            total_likes = sum(t[2] for t in matched)
-            total_comments = sum(t[3] for t in matched)
+        if matched_trailers: 
+            total_views = sum(t[1] for t in matched_trailers)
+            total_likes = sum(t[2] for t in matched_trailers)
+            total_comments = sum(t[3] for t in matched_trailers)
 
-            results.append ({
-                "movie_title": movie_title, 
-                "budget": budget,
-                "total_views": total_views,
-                "total_likes": total_likes,
-                "total_comments": total_comments,
-            })
+            cleaned_rows.append((movie_title, budget, total_views, total_likes, total_comments))
 
-    conn.close()
-    return results
+    if not cleaned_rows: 
+        print("No matching trailer data found.")
+        return
 
-def plot_trailer_vs_budget(data, top_n_labels=5): 
-    budgets = [d['budget']/1_000_000 for d in data]
-    views = [d['total_views'] for d in data]
-    titles = [d['movie_title'] for d in data]
+    top_movie = max(cleaned_rows, key=lambda r:r[2])
+    print("Movie with the most trailer views")
+    print(f" Title: {top_movie[0]}")
+    print(f" Budget: ${top_movie[1]}")
+    print(f" Total Views: {top_movie[2]}")
+
+    budgets = [r[1]/1_000_000 for r in cleaned_rows]
+    views = [r[2] for r in cleaned_rows]
+    titles = [r[0] for r in cleaned_rows]
 
     plt.figure(figsize=(12,6))
-    plt.scatter(budgets, views, color='teal', alpha=0.7, edgecolors='k')
+    plt.scatter(budgets, views, color='teal')
     plt.title("Youtube Trailer Views vs. Movie Budget")
     plt.xlabel("Movie Budget (Millions USD)")
     plt.ylabel("Total Trailer Views")
-    plt.grid(True, linestyle='--', alpha=0.5)
 
+    top_n_labels = 5
     top_indices = sorted(range(len(views)), key=lambda i: views[i], reverse=True)[:top_n_labels]
     for i in top_indices: 
-        plt.text(budgets[i], views[i], titles[i], fontsize=9, ha='right', va='bottom')
+        plt.text(budgets[i], views[i], titles[i], fontsize=9)
 
     plt.show()
+
+    result_list = []
+    for r in cleaned_rows:
+        result_list.append({
+            "title": r[0],
+            "budget": r[1],
+            "total_views": r[2],
+            "total_likes": r[3],
+            "total_comments": r[4],
+        })
+    return result_list
+
+def save_results_to_csv(calc1_results, calc2_results, calc3_results, filename="movie_results.csv"):
+    with open(filename, "w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.writer(csvfile)
+
+        # Calculation 1
+        writer.writerow(["Calculation 1: Highest Budget and IMDb Rating"])
+        if calc1_results:
+            hb = calc1_results["highest_budget_movie"]
+            hr = calc1_results["highest_rated_movie"]
+            writer.writerow(["Highest Budget Movie", hb[0], hb[1]])
+            writer.writerow(["Highest Rated Movie", hr[0], hr[2]])
+        writer.writerow([])
+
+        # Calculation 2
+        writer.writerow(["Calculation 2: Average IMDb Rating by Genre"])
+        if calc2_results:
+            for genre, avg in calc2_results.items():
+                writer.writerow([genre, avg])
+        writer.writerow([])
+
+        # Calculation 3
+        writer.writerow(["Calculation 3: Movie Trailer Popularity vs Budget"])
+        if calc3_results:
+            for movie in calc3_results:
+                writer.writerow([
+                    movie["title"],
+                    movie["budget"],
+                    movie["total_views"],
+                    movie["total_likes"],
+                    movie["total_comments"]
+                ])
 
 
 def main():
     conn = sqlite3.connect("movies.db")
 
-    calculation_1_budget_vs_rating(conn)
-    calculation_2_avg_rating_by_genre(conn)
+    calc1_results = calculation_1_budget_vs_rating(conn)
+    calc2_results = calculation_2_avg_rating_by_genre(conn)  
+    calc3_results = calculation_3_compare_trailer_popularity_to_budget(conn)  
 
-    data = compare_trailer_popularity_to_budget()
-    plot_trailer_vs_budget(data)
+    # Save all results to CSV
+    save_results_to_csv(calc1_results, calc2_results, calc3_results)
 
     conn.close()
-
-
+   
 if __name__ == "__main__":
     main()

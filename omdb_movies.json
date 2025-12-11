@@ -1,0 +1,572 @@
+[
+    {
+        "title": "Zootopia 2",
+        "imdb_id": "tt26443597",
+        "genre": "Animation, Action, Adventure",
+        "imdb_rating": "7.8"
+    },
+    {
+        "title": "Tron: Ares",
+        "imdb_id": "tt6604188",
+        "genre": "Action, Adventure, Sci-Fi",
+        "imdb_rating": "6.5"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt29232158",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt30274401",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt26439764",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Chainsaw Man - The Movie: Reze Arc",
+        "imdb_id": "tt30472557",
+        "genre": "Animation, Action, Adventure",
+        "imdb_rating": "8.5"
+    },
+    {
+        "title": "Predator: Badlands",
+        "imdb_id": "tt31227572",
+        "genre": "Action, Adventure, Sci-Fi",
+        "imdb_rating": "7.6"
+    },
+    {
+        "title": "Wildcat",
+        "imdb_id": "tt36153493",
+        "genre": "Action, Thriller",
+        "imdb_rating": "3.9"
+    },
+    {
+        "title": "Dracula",
+        "imdb_id": "tt31434030",
+        "genre": "Fantasy, Horror, Romance",
+        "imdb_rating": "6.2"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt1312221",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Altered",
+        "imdb_id": "tt32123395",
+        "genre": "Action, Sci-Fi",
+        "imdb_rating": "3.6"
+    },
+    {
+        "title": "Zootopia",
+        "imdb_id": "tt2948356",
+        "genre": "Animation, Action, Adventure",
+        "imdb_rating": "8.0"
+    },
+    {
+        "title": "Wicked: For Good",
+        "imdb_id": "tt19847976",
+        "genre": "Family, Fantasy, Musical",
+        "imdb_rating": "7.1"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt32820897",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt30144839",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt27431598",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt4589218",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt1757678",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "KPop Demon Hunters",
+        "imdb_id": "tt14205554",
+        "genre": "Animation, Action, Adventure",
+        "imdb_rating": "7.6"
+    },
+    {
+        "title": "Art of Eight Limbs",
+        "imdb_id": "tt10079652",
+        "genre": "Action, Thriller",
+        "imdb_rating": "4.0"
+    },
+    {
+        "title": "Now You See Me: Now You Don't",
+        "imdb_id": "tt4712810",
+        "genre": "Crime, Thriller",
+        "imdb_rating": "6.3"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt12300742",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Die My Love",
+        "imdb_id": "tt9362736",
+        "genre": "Drama, Thriller",
+        "imdb_rating": "6.6"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0295701",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Mission: Impossible - The Final Reckoning",
+        "imdb_id": "tt9603208",
+        "genre": "Action, Adventure, Thriller",
+        "imdb_rating": "7.2"
+    },
+    {
+        "title": "Mission: Impossible - The Final Reckoning",
+        "imdb_id": "tt9603208",
+        "genre": "Action, Adventure, Thriller",
+        "imdb_rating": "7.2"
+    },
+    {
+        "title": "Die My Love",
+        "imdb_id": "tt9362736",
+        "genre": "Drama, Thriller",
+        "imdb_rating": "6.6"
+    },
+    {
+        "title": "Black Phone 2",
+        "imdb_id": "tt29644189",
+        "genre": "Horror",
+        "imdb_rating": "6.2"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt10676052",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Regretting You",
+        "imdb_id": "tt33088452",
+        "genre": "Drama, Romance",
+        "imdb_rating": "6.2"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt32304349",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Superman",
+        "imdb_id": "tt5950044",
+        "genre": "Action, Adventure, Sci-Fi",
+        "imdb_rating": "7.1"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt31036941",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "The Conjuring: Last Rites",
+        "imdb_id": "tt22898462",
+        "genre": "Horror, Mystery, Thriller",
+        "imdb_rating": "6.3"
+    },
+    {
+        "title": "The Avengers",
+        "imdb_id": "tt0848228",
+        "genre": "Action, Sci-Fi",
+        "imdb_rating": "8.0"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0170016",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt1262426",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Home Alone 2: Lost in New York",
+        "imdb_id": "tt0104431",
+        "genre": "Adventure, Comedy, Crime",
+        "imdb_rating": "6.9"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt30024043",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0816692",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt16311594",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "The Monuments Men",
+        "imdb_id": "tt2177771",
+        "genre": "Biography, Comedy, Drama",
+        "imdb_rating": "6.1"
+    },
+    {
+        "title": "Avatar",
+        "imdb_id": "tt0499549",
+        "genre": "Action, Adventure, Fantasy",
+        "imdb_rating": "7.9"
+    },
+    {
+        "title": "How to Train Your Dragon",
+        "imdb_id": "tt26743210",
+        "genre": "Action, Adventure, Comedy",
+        "imdb_rating": "7.8"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt31844586",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "It",
+        "imdb_id": "tt1396484",
+        "genre": "Horror",
+        "imdb_rating": "7.3"
+    },
+    {
+        "title": "It: Chapter Two",
+        "imdb_id": "tt7349950",
+        "genre": "Drama, Fantasy, Horror",
+        "imdb_rating": "6.5"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt30017619",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Avatar: The Way of Water",
+        "imdb_id": "tt1630029",
+        "genre": "Action, Adventure, Fantasy",
+        "imdb_rating": "7.5"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt4900148",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt7181546",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Shelby Oaks",
+        "imdb_id": "tt14999684",
+        "genre": "Horror, Thriller",
+        "imdb_rating": "5.8"
+    },
+    {
+        "title": "Nobody 2",
+        "imdb_id": "tt28996126",
+        "genre": "Action, Comedy, Crime",
+        "imdb_rating": "6.3"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt22022452",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt13622970",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Predator",
+        "imdb_id": "tt0093773",
+        "genre": "Action, Adventure, Horror",
+        "imdb_rating": "7.8"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt27714581",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt3566834",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Roofman",
+        "imdb_id": "tt4627382",
+        "genre": "Biography, Crime, Drama",
+        "imdb_rating": "7.2"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt1375666",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0468569",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0083866",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": "Lilo & Stitch",
+        "imdb_id": "tt11655566",
+        "genre": "Action, Adventure, Comedy",
+        "imdb_rating": "6.7"
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0120737",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt2709692",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0241527",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0120338",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0295297",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0363771",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt6263850",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt12037194",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt9150192",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0068646",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt14107334",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt34956443",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt10374610",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt29768334",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0167261",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt31193180",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0111161",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt9619824",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt14948432",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt3402138",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt1201607",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt29344903",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0926084",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0051418",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0330373",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt26581740",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0095016",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt18259086",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt29567915",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt0373889",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt6718170",
+        "genre": null,
+        "imdb_rating": null
+    },
+    {
+        "title": null,
+        "imdb_id": "tt4154756",
+        "genre": null,
+        "imdb_rating": null
+    }
+]

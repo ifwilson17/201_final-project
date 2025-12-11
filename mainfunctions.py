@@ -14,49 +14,46 @@ from API_keys import omdb_key
 from API_keys import yt_key
 
 
-def get_tmdb_movies(pages=5, output_file="movie.json"):
+def get_tmdb_movies(target=100, output_file="movie.json"):
     movies = []
-
-    for page in range(1, pages + 1):
-
-        # Endpoint for popular movies
+    page = 1
+    while len(movies) < target:
         url = "https://api.themoviedb.org/3/movie/popular"
         params = {
-            "api_key": tmdb_key.api_key,
+            "api_key": tmdb_key.api_key, 
             "language": "en-US",
             "page": page
         }
-
-        response = requests.get(url, params=params)
-        data = response.json()
-
-        # Loop through movies on the page
-        for movie in data.get("results", []):
+        data = requests.get(url, params=params).json()
+        if not data.get("results"):
+            break  
+        for movie in data["results"]:
             tmdb_id = movie["id"]
+            detail_data = requests.get(
+                f"https://api.themoviedb.org/3/movie/{tmdb_id}",
+                params={
+                    "api_key": tmdb_key.api_key,
+                    "language": "en-US"
+                }
+            ).json()
 
-            # Fetch detailed info
-            detail_url = f"https://api.themoviedb.org/3/movie/{tmdb_id}"
-            detail_params = {
-                "api_key": tmdb_key.api_key,
-                "language": "en-US"
-            }
+            budget = detail_data.get("budget", 0)
+            if budget > 0:
+                movies.append({
+                    "title": detail_data.get("title"),
+                    "tmdb_id": tmdb_id,
+                    "imdb_id": detail_data.get("imdb_id"),
+                    "budget": budget
+                })
+            if len(movies) >= target:
+                break
+        page += 1
 
-            detail_res = requests.get(detail_url, params=detail_params)
-            detail_data = detail_res.json()
-
-            # Save relevant fields
-            movies.append({
-                "title": detail_data.get("title"),
-                "tmdb_id": tmdb_id,
-                "imdb_id": detail_data.get("imdb_id"),
-                "budget": detail_data.get("budget")
-            })
-
-    # Save to file
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(movies, f, indent=4)
 
     return movies
+
 
 
 
@@ -67,12 +64,14 @@ def get_omdb_ratings(imdb_ids, output_file="omdb_movies.json"):
     base_url = "http://www.omdbapi.com/"
 
     for imdb_id in imdb_ids:
-
-        params = {
+        detail = requests.get(base_url, params = {
             "apikey": omdb_key.api_key,
             "i": imdb_id
-        }
-        detail = requests.get(base_url, params=params).json()
+        }).json()
+        imdb_rating = detail.get("imdbRating")
+
+        if imdb_rating == "N/A": 
+            continue
 
         # Store only fields we need
         movies.append({
@@ -169,7 +168,7 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
 
 def main():
     # 1. Fetch TMDB movies
-    tmdb_movies = get_tmdb_movies(pages=6)
+    tmdb_movies = get_tmdb_movies(target=100)
     print("TMDB movies collected:", len(tmdb_movies))
 
     # 2. Extract IMDb IDs from TMDB movies
