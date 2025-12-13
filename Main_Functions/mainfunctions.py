@@ -9,9 +9,20 @@ import os
 import json
 import requests
 import re
-from API_keys import tmdb_key
-from API_keys import omdb_key 
-from API_keys import yt_key
+
+
+def get_api_key(file):
+    filename = "API_keys/" + file
+    base_path = os.path.abspath(os.path.dirname(__file__))
+    full_path = os.path.join(base_path, filename)
+    with open(full_path) as f:
+        api_key = f.read()
+    return api_key
+
+tmdb_key = get_api_key('tmdb_key.txt')
+omdb_api_key = get_api_key('omdb_key.txt')
+yt_api_key = get_api_key('yt_key.txt')
+
 
 
 def get_tmdb_movies(target=150, output_file="movie.json"):
@@ -20,7 +31,7 @@ def get_tmdb_movies(target=150, output_file="movie.json"):
     while len(movies) < target:
         url = "https://api.themoviedb.org/3/movie/popular"
         params = {
-            "api_key": tmdb_key.api_key, 
+            "api_key": tmdb_key, 
             "language": "en-US",
             "page": page
         }
@@ -32,7 +43,7 @@ def get_tmdb_movies(target=150, output_file="movie.json"):
             detail_data = requests.get(
                 f"https://api.themoviedb.org/3/movie/{tmdb_id}",
                 params={
-                    "api_key": tmdb_key.api_key,
+                    "api_key": tmdb_key,
                     "language": "en-US"
                 }
             ).json()
@@ -70,7 +81,7 @@ def get_omdb_ratings(imdb_ids, output_file="omdb_movies.json"):
         imdb_lookup = f"tt{imdb_int}"
 
         detail = requests.get(base_url, params = {
-            "apikey": omdb_key.api_key,
+            "apikey": omdb_api_key,
             "i": imdb_lookup
         }).json()
         imdb_rating = detail.get("imdbRating")
@@ -102,7 +113,7 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
 
     for i in range(6): 
         params_search = {
-            "key": yt_key.api_key,
+            "key": yt_api_key,
             "q": "official trailer", 
             "type": "video",
             "type": "video",
@@ -124,6 +135,7 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
 
         for item in items: 
             title = item["snippet"]["title"]
+            title = re.sub(r"&quot;", '"', title)
             title = re.sub(r"&amp;", "&", title)
             title = re.sub(r"&#39;", "'", title)
             title = re.sub(r"[^\x20-\x7E]", "", title).strip()
@@ -133,7 +145,7 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
                 continue
 
             stats_response = requests.get(video_url, params={
-                "key": yt_key.api_key,
+                "key": yt_api_key,
                 "id": video_id,
                 "part": "statistics"
             }).json()
@@ -165,6 +177,7 @@ def get_youtube_trailers(output_file="youtube_trailers.json"):
     for t in trailers: 
         title = t["title"].lower()
         base = re.split(r"\|", title)[0]
+        base = base.replace("Disneys", "")
         base = re.split(r"official", base)[0]
         base = "".join(re.split(r"\(.*?\)", base))
         words = re.findall(r"[a-z0-9]+", base)
