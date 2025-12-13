@@ -86,22 +86,16 @@ def save_tmdb_movies_to_db(conn, movies):
     print("TMDB: Added", count_added, "movies.")
 
 
-
 # Insert OMDB 
 def save_omdb_movies_to_db(conn, movies):
     cur = conn.cursor()
     count_added = 0
 
     for movie in movies:
-        imdb_id = movie.get("imdb_id")
-
-        # Skip duplicates
-        cur.execute("SELECT 1 FROM omdb_movies WHERE imdb_id = ?", (imdb_id,))
-        if cur.fetchone():
-            continue
-
         if count_added >= 25:
             break
+
+        imdb_id = movie.get("imdb_id")
 
         rating = movie.get("imdb_rating")
         if rating in (None, "", "N/A"):
@@ -114,16 +108,14 @@ def save_omdb_movies_to_db(conn, movies):
 
         genre_string = movie.get("genre")
         if genre_string:
-            first_genre = genre_string.split(",")[0].strip()     # Use first genre only
+            first_genre = genre_string.split(",")[0].strip()
 
-            # Check if genre already exists
             cur.execute("SELECT genre_id FROM genres WHERE name = ?", (first_genre,))
             row = cur.fetchone()
 
             if row:
                 genre_id = row[0]
             else:
-                # Insert and get new genre_id
                 cur.execute("INSERT INTO genres (name) VALUES (?)", (first_genre,))
                 genre_id = cur.lastrowid
         else:
@@ -142,6 +134,7 @@ def save_omdb_movies_to_db(conn, movies):
 
     conn.commit()
     print("OMDB: Added", count_added, "movies.")
+
 
 
 # Insert youtube trailers 
@@ -181,18 +174,18 @@ def main():
     init_db()
     conn = sqlite3.connect("movies.db")
 
-    # Load TMDB JSON
-    with open("movie.json", "r") as f:
+    # Load TMDB JSON (Using master file)
+    with open("movie_master.json", "r") as f:
         tmdb_movies = json.load(f)
     save_tmdb_movies_to_db(conn, tmdb_movies)
 
-    # Load OMDB JSON
-    with open("omdb_movies.json", "r") as f:
+    # Load OMDB JSON (Using master file)
+    with open("omdb_master.json", "r") as f:
         omdb_movies = json.load(f)
     save_omdb_movies_to_db(conn, omdb_movies)
 
-    # Load YouTube JSON 
-    with open("youtube_trailers.json", "r") as f:
+    # Load YouTube JSON (Using master file)
+    with open("youtube_trailers_master.json", "r") as f:
         youtube_trailers = json.load(f)
     save_youtube_trailers_to_db(conn, youtube_trailers)
 

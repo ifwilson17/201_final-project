@@ -16,7 +16,7 @@ def get_api_key(file):
     base_path = os.path.abspath(os.path.dirname(__file__))
     full_path = os.path.join(base_path, filename)
     with open(full_path) as f:
-        api_key = f.read()
+        api_key = f.read().strip()
     return api_key
 
 tmdb_key = get_api_key('tmdb_key.txt')
@@ -84,9 +84,10 @@ def get_omdb_ratings(imdb_ids, output_file="omdb_movies.json"):
             "apikey": omdb_api_key,
             "i": imdb_lookup
         }).json()
+        # print(detail)
         imdb_rating = detail.get("imdbRating")
 
-        if imdb_rating == "N/A": 
+        if imdb_rating == "N/A" or detail.get("Response") == "False": 
             continue
 
         # Store only fields we need
